@@ -1,10 +1,11 @@
-import { validate } from "../middlewares/validator.js";
+import { catchAsync } from "../helpers/catchAsync.js";
 import userService from "../services/userService.js";
-import { registerSchema } from "../utils/schema.js";
+import { APIResponseHandler } from "../utils/responseHandler.js";
 
-export const signup = async (req, res) => {
+export const signup = catchAsync(async (req, res, next) => {
   const { confirmPassword, ...userData } = req.body;
 
-  await userService.registerUser(userData);
-  res.status(201).json({ message: "Signup successful", success: true });
-};
+  await userService.registerUser(res, userData);
+ 
+  APIResponseHandler(res, true, 201, "Signup successful", []);
+});

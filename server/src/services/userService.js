@@ -1,12 +1,22 @@
 import userRepository from "../repositories/userRepository.js";
+import { APIResponseHandler } from "../utils/responseHandler.js";
 
 class UserService {
-  async registerUser(data) {
+  async registerUser(res, data) {
     const existingUser = await userRepository.findByEmail(data.email);
-    if (existingUser) throw new Error("Email already registered");
+    if (existingUser) APIResponseHandler(res, false, 400, "User already exist");
 
-    return await userRepository.createUser(data)
+    const newUser = await userRepository.createUser(data);
+    if (!newUser) {
+      return APIResponseHandler(
+        res,
+        false,
+        400,
+        "Error occurred! Please try again"
+      );
+    }
+    return newUser;
   }
 }
 
-export default new UserService()
+export default new UserService();

@@ -4,6 +4,7 @@ import helmet from "helmet";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRouter from "./routes/authRoutes.js";
+import { ExpressErrors } from "./utils/responseHandler.js";
 
 dotenv.config();
 const app = express();
@@ -26,6 +27,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRouter);
+
+app.use(ExpressErrors)
 
 app.listen(process.env.PORT, () => {
   console.log(`Shophoria Backend Listening on ${process.env.PORT}`);
