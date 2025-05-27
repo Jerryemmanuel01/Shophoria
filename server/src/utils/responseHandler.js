@@ -1,3 +1,5 @@
+import { logErrorToFile } from "./errorLogger.js";
+
 export function APIResponseHandler(
   res,
   success,
@@ -26,6 +28,10 @@ export function errorResponse(res, statusCode, message, data = []) {
 }
 
 export function ExpressErrors(err, req, res, next) {
+  logErrorToFile(err);
+  console.log(err);
+  
+
   if (err.name === "ValidationError") {
     return errorResponse(res, 422, err.message);
   }
