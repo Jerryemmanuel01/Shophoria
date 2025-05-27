@@ -10,6 +10,10 @@ class UserRepository {
     return await User.findOne({ email });
   }
 
+  async loginByEmail(email) {
+    return await User.findOne({ email }).select("+password");
+  }
+
   async updateUser(userId, updateData) {
     return await User.findByIdAndUpdate(userId, updateData, { new: true });
   }

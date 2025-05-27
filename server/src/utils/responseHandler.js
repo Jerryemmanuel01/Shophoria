@@ -5,32 +5,32 @@ export function APIResponseHandler(
   success,
   statusCode = 400,
   message = "Error! Please try again later.",
-  data = []
+  data,
+  token
 ) {
-  if (success) return successResponse(res, statusCode, message, data);
+  if (success) return successResponse(res, statusCode, message, data, token);
   return errorResponse(res, statusCode, message, data);
 }
 
-export function successResponse(res, statusCode, message, data = []) {
+export function successResponse(res, statusCode, message, data, token) {
   res.status(statusCode).json({
-    status: true,
-    message: message,
-    data: data,
+    success: true,
+    ...(message && { message }),
+    ...(data && { data }),
+    ...(token && { token }),
   });
 }
 
-export function errorResponse(res, statusCode, message, data = []) {
+export function errorResponse(res, statusCode, message, data) {
   res.status(statusCode).json({
-    status: false,
-    message: message,
-    data: data,
+    success: false,
+    ...(message && { message }),
+    ...(data && { data }),
   });
 }
 
 export function ExpressErrors(err, req, res, next) {
   logErrorToFile(err);
-  console.log(err);
-  
 
   if (err.name === "ValidationError") {
     return errorResponse(res, 422, err.message);
