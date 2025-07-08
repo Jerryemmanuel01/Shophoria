@@ -1,4 +1,5 @@
 import { validationResult } from "express-validator";
+import { createHmac } from "node:crypto";
 
 export const validateRequest = (req, res, next) => {
   const errors = validationResult(req);
@@ -12,4 +13,9 @@ export const validateRequest = (req, res, next) => {
     });
   }
   next();
+};
+
+export const hmacProcess = (value, key) => {
+  const result = createHmac("sha256", key).update(value).digest("hex");
+  return result;
 };

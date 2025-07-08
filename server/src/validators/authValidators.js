@@ -73,9 +73,16 @@ export const registerValidation = [
 
 /* ---------- 2. login ---------- */
 export const loginValidation = [
-  body("email").isEmail().withMessage("Invalid email address"),
+  body("email")
+    .escape()
+    .isEmail()
+    .withMessage("Invalid email address")
+    .notEmpty()
+    .withMessage("Email is required")
+    .trim(),
 
   body("password")
+    .escape()
     .isLength({ min: 8 })
     .withMessage("Password must be at least 8 characters")
     .matches(/[A-Z]/)
@@ -90,7 +97,13 @@ export const loginValidation = [
 
 /* ---------- 3. forget-password ---------- */
 export const forgetPasswordValidation = [
-  body("email").isEmail().withMessage("Invalid email format"),
+  body("email")
+    .escape()
+    .isEmail()
+    .withMessage("Invalid email format")
+    .notEmpty()
+    .withMessage("First name is required")
+    .trim(),
 ];
 
 /* ---------- 4. reset-password ---------- */

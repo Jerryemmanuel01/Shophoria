@@ -12,3 +12,9 @@ export const login = catchAsync(async (req, res, next) => {
 
   await userService.login(res, email, password);
 });
+
+export const forgetPassword = catchAsync(async (req, res, next) => {
+  const { email } = req.body;
+
+  await userService.forgetPassword(res, email)
+});

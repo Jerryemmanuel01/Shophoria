@@ -1,87 +1,23 @@
-[2025-05-27T15:07:48.237Z] Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:652:11)
-    at ServerResponse.header (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:684:10)
-    at ServerResponse.send (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:161:12)
-    at ServerResponse.json (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:250:15)
-    at successResponse (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:15:26)
-    at APIResponseHandler (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:10:23)
-    at file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:19:3
+[2025-05-29T15:13:41.466Z] ReferenceError: createHmac is not defined
+    at hmacProcess (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/middlewares/validator.js:18:18)
+    at UserService.forgetPassword (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:77:29)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:19:3
 
-[2025-05-27T15:10:02.037Z] Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:652:11)
-    at ServerResponse.header (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:684:10)
-    at ServerResponse.send (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:161:12)
-    at ServerResponse.json (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:250:15)
-    at successResponse (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:15:26)
-    at APIResponseHandler (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:10:23)
-    at file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:19:3
+[2025-05-29T15:16:23.147Z] ReferenceError: existingUser is not defined
+    at UserService.forgetPassword (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:82:104)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:19:3
 
-[2025-05-27T15:10:54.169Z] Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:652:11)
-    at ServerResponse.header (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:684:10)
-    at ServerResponse.send (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:161:12)
-    at ServerResponse.json (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:250:15)
-    at successResponse (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:15:26)
-    at APIResponseHandler (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:10:23)
-    at file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:19:3
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-
-[2025-05-27T15:12:26.409Z] MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
-    at Timeout.<anonymous> (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
-    at listOnTimeout (node:internal/timers:573:17)
-    at process.processTimers (node:internal/timers:514:7)
-
-[2025-05-27T15:15:12.740Z] Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:652:11)
-    at ServerResponse.header (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:684:10)
-    at ServerResponse.send (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:161:12)
-    at ServerResponse.json (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express\lib\response.js:250:15)
-    at successResponse (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:15:26)
-    at APIResponseHandler (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:10:23)
-    at file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:19:3
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-
-[2025-05-27T15:26:24.272Z] Error: Illegal arguments: string, undefined
-    at Object.compareSync (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/node_modules/bcryptjs/index.js:228:11)
-    at UserService.login (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:40:42)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:14:3
-
-[2025-05-27T15:29:51.410Z] Error: Illegal arguments: string, undefined
-    at Object.compareSync (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/node_modules/bcryptjs/index.js:228:11)
-    at UserService.login (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:40:42)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:14:3
-
-[2025-05-27T15:32:45.857Z] Error: Illegal arguments: string, undefined
-    at Object.compareSync (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/node_modules/bcryptjs/index.js:228:11)
-    at UserService.login (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:42:42)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:14:3
-
-[2025-05-27T15:34:07.730Z] Error: Illegal arguments: string, undefined
-    at Object.compareSync (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/node_modules/bcryptjs/index.js:228:11)
-    at UserService.login (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:42:42)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:14:3
-
-[2025-05-27T15:36:22.019Z] TypeError: userRepository.findByEmail(...).select is not a function
-    at UserService.login (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:35:58)
-    at file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:14:21
-    at file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/helpers/catchAsync.js:3:21
-    at Layer.handleRequest (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\router\lib\layer.js:152:17)
-    at next (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\router\lib\route.js:157:13)
-    at validateRequest (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/middlewares/validator.js:14:3)
-    at Layer.handleRequest (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\router\lib\layer.js:152:17)
-    at next (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\router\lib\route.js:157:13)
-    at middleware (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\express-validator\lib\middlewares\check.js:16:13)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-
-[2025-05-27T15:44:25.528Z] ReferenceError: token is not defined
-    at APIResponseHandler (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/utils/responseHandler.js:10:71)
-    at UserService.login (file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/services/userService.js:58:12)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async file:///C:/Users/GRANDSTORM/Desktop/Shophoria/server/src/controllers/authController.js:14:3
+[2025-05-29T15:17:21.199Z] Error: Missing credentials for "PLAIN"
+    at SMTPConnection._formatError (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection.login (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-connection\index.js:454:38)
+    at C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-transport\index.js:272:32
+    at SMTPConnection.<anonymous> (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-connection\index.js:215:17)
+    at Object.onceWrapper (node:events:632:28)
+    at SMTPConnection.emit (node:events:518:28)
+    at SMTPConnection._actionEHLO (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-connection\index.js:1371:14)
+    at SMTPConnection._processResponse (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at SMTPConnection._onSocketData (C:\Users\GRANDSTORM\Desktop\Shophoria\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
 

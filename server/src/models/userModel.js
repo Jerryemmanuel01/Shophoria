@@ -46,6 +46,22 @@ const userSchema = new Schema(
       type: Boolean,
       default: true,
     },
+    forgotPasswordCode: {
+      type: String,
+      select: false,
+    },
+    forgotPasswordCodeValidation: {
+      type: Number,
+      select: false,
+    },
+    emailVerificationCode: {
+      type: String,
+      select: false,
+    },
+    emailVerificationCodeValidation: {
+      type: Number,
+      select: false,
+    },
   },
   { timestamps: true }
 );
